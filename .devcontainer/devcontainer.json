@@ -1,7 +1,15 @@
 {
   "name": "ml-assignments",
-  "build": { "dockerfile": "Dockerfile" },
-  "postCreateCommand": "conda run -n ml python -m ipykernel install --user --name ml --display-name 'Python (ml)'",
-  "postAttachCommand": "conda activate ml"
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+
+  "features": {
+    "ghcr.io/devcontainers/features/conda:1": {
+      "mamba": "true",
+      "environmentFile": "environment.yml",
+      "activateEnvironment": "mlat"
+    }
+  },
+
+  "postCreateCommand": "conda run -n mlat python -m ipykernel install --user --name mlat --display-name 'Python (mlat)'",
+  "postAttachCommand": "conda activate mlat"
 }
-  

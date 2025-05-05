@@ -1,4 +1,4 @@
-name: ml
+name: mlat
 channels:
   - pytorch          # 先写 pytorch，保证拿到匹配的 build
   - conda-forge
@@ -17,3 +17,4 @@ dependencies:
   - pytorch=2.1
   - torchvision=0.16
 
+  
