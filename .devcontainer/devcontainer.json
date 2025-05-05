@@ -7,12 +7,13 @@
       // 一行搞定 conda (mamba) + env
       "ghcr.io/devcontainers/features/conda:1": {
         "mamba": true,
-        "environmentFile": "environment.yml",
+        "environmentFile": ".devcontainer/environment.yml",
         "initEnv": "ml"
       }
     },
   
     // Codespace 第一次启动后：注册 Jupyter 内核
     "postCreateCommand": "conda run -n ml python -m ipykernel install --user --name ml --display-name 'Python (ml)'"
+
   }
   
