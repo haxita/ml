@@ -16,6 +16,4 @@ dependencies:
   - cpuonly          # 避免 CUDA 依赖
   - pytorch=2.1
   - torchvision=0.16
-  # （可选）手动排雷旧 Colab 代码
-  - pip:
-      - google-auth  # 如果笔记会尝试 import google.colab，常见依赖
+
