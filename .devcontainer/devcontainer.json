@@ -1,15 +1,22 @@
+
 {
   "name": "ml-assignments",
   "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
 
   "features": {
     "ghcr.io/devcontainers/features/conda:1": {
+      // 用 mamba 安装更快
       "mamba": "true",
+      // 相对工作区根目录的路径
       "environmentFile": "environment.yml",
-      "activateEnvironment": "mlat"
+      // 创建并自动激活名为 mlat 的环境（正确字段是 initEnv！）
+      "initEnv": "mlat"
     }
   },
 
+  // 首次建完 env 后注册 Jupyter 内核
   "postCreateCommand": "conda run -n mlat python -m ipykernel install --user --name mlat --display-name 'Python (mlat)'",
+
+  // 打开任何新终端都自动进入 mlat
   "postAttachCommand": "conda activate mlat"
 }
