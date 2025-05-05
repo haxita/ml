@@ -4,9 +4,9 @@
 
   "features": {
     "ghcr.io/devcontainers/features/conda:1": {
-      "mamba": "true",                 // 一定写成字符串
+      "mamba": "true",
       "environmentFile": "environment.yml",
-      "activateEnvironment": "mlat"    // 正确字段名
+      "activateEnvironment": "mlat"
     }
   },
 

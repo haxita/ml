@@ -1,20 +1,16 @@
 name: mlat
 channels:
-  - pytorch          # 先写 pytorch，保证拿到匹配的 build
   - conda-forge
 dependencies:
-  # ─── 基础 ───
-  - python=3.10
-  - numpy=1.24
-  - matplotlib=3.7
-  - pillow=10.2
-  - tqdm=4.66
-  - jupyterlab=4.1
-  - notebook         # 兼容旧指令
+  # 基础
+  - python=3.11                    # 与基础镜像对齐
+  - numpy
+  - matplotlib
+  - pillow
+  - tqdm
+  - jupyterlab                     # notebook 会随 jlab 4+ 自动拉 notebook 7
   - ipykernel
-  # ─── PyTorch CPU ───
-  - cpuonly          # 避免 CUDA 依赖
-  - pytorch=2.1
-  - torchvision=0.16
 
-  
+  # PyTorch（CPU 版）
+  - pytorch=2.2.*=cpu*             # 或直接用 pytorch-cpu
+  - torchvision

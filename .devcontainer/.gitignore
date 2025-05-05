@@ -1,3 +1,0 @@
-# 忽略 VS Code Dev Container 本地缓存
-.devcontainer/.devcontainer.json
-.devcontainer/Dockerfile
