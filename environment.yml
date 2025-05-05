@@ -1,0 +1,21 @@
+name: ml
+channels:
+  - pytorch          # 先写 pytorch，保证拿到匹配的 build
+  - conda-forge
+dependencies:
+  # ─── 基础 ───
+  - python=3.10
+  - numpy=1.24
+  - matplotlib=3.7
+  - pillow=10.2
+  - tqdm=4.66
+  - jupyterlab=4.1
+  - notebook         # 兼容旧指令
+  - ipykernel
+  # ─── PyTorch CPU ───
+  - cpuonly          # 避免 CUDA 依赖
+  - pytorch=2.1
+  - torchvision=0.16
+  # （可选）手动排雷旧 Colab 代码
+  - pip:
+      - google-auth  # 如果笔记会尝试 import google.colab，常见依赖
