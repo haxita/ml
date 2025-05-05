@@ -13,6 +13,6 @@
     },
   
     // Codespace 第一次启动后：注册 Jupyter 内核
-    "postCreateCommand": "python -m ipykernel install --user --name ml --display-name 'Python (ml)'"
+    "postCreateCommand": "conda run -n ml python -m ipykernel install --user --name ml --display-name 'Python (ml)'"
   }
   
