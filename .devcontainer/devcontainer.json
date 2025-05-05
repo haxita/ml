@@ -1,0 +1,18 @@
+{
+    "name": "ml-assignments",
+    // 官方带 conda 的基础镜像（debian + Python 3.11）
+    "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  
+    "features": {
+      // 一行搞定 conda (mamba) + env
+      "ghcr.io/devcontainers/features/conda:1": {
+        "mamba": true,
+        "environmentFile": "environment.yml",
+        "initEnv": "ml"
+      }
+    },
+  
+    // Codespace 第一次启动后：注册 Jupyter 内核
+    "postCreateCommand": "python -m ipykernel install --user --name ml --display-name 'Python (ml)'"
+  }
+  
