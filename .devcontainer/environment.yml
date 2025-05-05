@@ -1,0 +1,21 @@
+name: ml
+channels:
+  - pytorch        # PyTorch 官方 channel，含 cpuonly 元包
+  - conda-forge    # 更全的社区包
+  - defaults
+dependencies:
+  # ——核心环境——
+  - python=3.11
+  - numpy
+  - matplotlib
+  - pillow
+  - tqdm
+  - jupyterlab>=4           # 会自动带 notebook 7
+  - ipykernel
+  # ——PyTorch CPU 版——
+  - pytorch=2.2.*=cpu*      # 或者:  - pytorch=2.2.*  - cpuonly
+  - torchvision=0.17.*
+  # ——常用机器学习包——
+  - scikit-learn            # conda 会选 1.4/1.5 系列
+  - pandas
+  - seaborn
