@@ -1,0 +1,12 @@
+name: mlat
+channels:
+  - conda-forge
+dependencies:
+  # 任意 >=3.6 的版本都满足要求，选 3.11 与新版 sklearn 兼容最好
+  - python=3.11
+  - scikit-learn        # >=0.19，直接装最新版
+  - matplotlib          # >=2.0.0
+  - jupyterlab
+  - pip
+
+

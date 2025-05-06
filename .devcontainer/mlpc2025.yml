@@ -1,0 +1,10 @@
+name: mlpc2025
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12          # 与容器镜像一致
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - jupyterlab
