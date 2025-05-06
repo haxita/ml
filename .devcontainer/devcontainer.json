@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   // 容器名称会显示在 VS Code 左下角
   "name": "ML Coursework 2025",
 
@@ -35,3 +36,27 @@
     }
   }
 }
+=======
+  // Codespace 左侧名称
+  "name": "ml",
+  // 预装 Conda 的官方 Python 镜像（含 miniconda）
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+
+  // 可选：自动装一些 VS Code 插件
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        // 让 VS Code/Jupyter 默认使用新环境的解释器
+        "python.defaultInterpreterPath": "/opt/conda/envs/ml/bin/python"
+      }
+    }
+  },
+
+  // 创建 / 更新 Conda 环境并在 shell 中默认激活
+  "postCreateCommand": "/bin/bash -c '\n  # 安装更快的 mamba\n  conda install -n base -c conda-forge mamba -y && \\\n  # 如果环境已存在则 update，否则 create\n  if conda env list | grep -q \"^ml\\s\"; then \\\n    mamba env update -n ml -f .devcontainer/environment.yml --prune; \\\n  else \\\n    mamba env create -f .devcontainer/environment.yml; \\\n  fi && \\\n  # 让后续终端自动进入该环境\n  echo \"conda activate ml\" >> ~/.bashrc\n'"
+}
+>>>>>>> cc757d2d076f9b304c491225006ff1ddef96e033
