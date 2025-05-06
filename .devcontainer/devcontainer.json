@@ -1,31 +1,17 @@
 {
-  // 容器名称会显示在 VS Code 左下角
   "name": "ML Coursework 2025",
-
-  // 直接使用官方带 conda 的基础镜像，尺寸小、启动快
-  "image": "mcr.microsoft.com/devcontainers/miniconda:0-3.12",
-
-  // 安装常用 CLI 与 conda 支持
+  "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
   "features": {
-    // 通用工具（git, curl, zsh …）
     "ghcr.io/devcontainers/features/common-utils:2": {},
-    // 如果你希望用完整 Anaconda 而非 Miniconda，可改用下面这行
-    // "ghcr.io/devcontainers/features/anaconda:1": {}
-    "ghcr.io/devcontainers/features/conda-advanced:1": {
-      "autoActivateBase": false          // 不自动激活 base
+    "ghcr.io/devcontainers/features/conda:1": {
+      "autoActivateBase": false
     }
   },
-
-  // 第一次拉起 Codespace 时创建两个独立的 conda env
   "postCreateCommand": "conda env create -f envs/mlpc2025.yml && \\\n                      conda env create -f envs/mlat.yml",
-
-  // 打开容器后默认让 VS Code 使用 mlpc2025 环境
   "settings": {
     "python.defaultInterpreterPath": "/opt/conda/envs/mlpc2025/bin/python",
     "terminal.integrated.defaultProfile.linux": "bash"
   },
-
-  // 自动安装常用扩展
   "customizations": {
     "vscode": {
       "extensions": [
